@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Guide</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #001f3f; /* Dark navy blue background */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #dashboard {
+            background: linear-gradient(to bottom right, #4a90e2, #d93025); /* Muted blue to red */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 400px; /* Set a fixed width for the box */
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-wrapper {
+            margin-top: 20px;
+        }
+        .form-container {
+            margin-bottom: 20px;
+            padding: 15px; /* Removed background */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ffffff; /* White button */
+            color: #333; /* Dark text for readability */
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #e0e0e0; /* Slightly darker on hover */
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // Redirect to dashboard.html on Login button click
+            $('#btn2').click(function(e) {
+                e.preventDefault();
+                window.location.href = "main.html";
+            });
+
+            // Alert for Sign Up button click
+            $('#btn1').click(function(e) {
+                e.preventDefault();
+                alert("Signed Up Successfully!");
+            });
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section id="dashboard">
+            <h2>Valorant Guide</h2>
+            <div class="form-wrapper">
+                <!-- Login Form -->
+                <div class="form-container login-form">
+                    <h3>Login</h3>
+                    <form action="/login" method="POST">
+                        <label for="login-mobile">Mobile Number:</label>
+                        <input type="text" id="login-mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter Mobile Number" required>
+                    
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" name="password" placeholder="Enter Password" required>
+                    
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                <!-- Sign Up Form -->
+                <div class="form-container signup-form">
+                    <h3>Sign Up</h3>
+                    <form action="/signup" method="POST">
+                        <label for="signup-name">Full Name:</label>
+                        <input type="text" id="signup-name" name="name" required>
+                    
+                        <label for="signup-mobile">Mobile Number:</label>
+                        <input type="text" id="signup-mobile" name="mobile" pattern="[0-9]{10}" required>
+                    
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" name="password" required>
+                    
+                        <button type="submit">Sign Up</button>
+                    </form> 
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
